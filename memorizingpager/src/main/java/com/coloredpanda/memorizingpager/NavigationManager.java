@@ -110,6 +110,7 @@ public final class NavigationManager implements Parcelable {
   public final int removeLastSelectedItem() {
     if (mFirstSelect) {
       mSelectedPages.clear();
+      mPushedCount = 0;
       return 0;
     }
 
@@ -118,13 +119,8 @@ public final class NavigationManager implements Parcelable {
     }
 
     mPushedCount--;
-    if (!mSelectedPages.isEmpty()) {
-      mBackupItemId = mSelectedPages.peek();
-      return mSelectedPages.pop();
-    } else {
-      mBackupItemId = 0;
-      return 0;
-    }
+    mBackupItemId = mSelectedPages.peek();
+    return mSelectedPages.pop();
   }
 
   /**
