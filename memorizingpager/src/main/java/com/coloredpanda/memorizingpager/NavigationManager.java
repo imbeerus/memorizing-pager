@@ -30,7 +30,7 @@ import java.util.Deque;
 
 public final class NavigationManager implements Parcelable {
 
-  private static final Creator<NavigationManager> CREATOR = new Creator<NavigationManager>() {
+  public static final Creator<NavigationManager> CREATOR = new Creator<NavigationManager>() {
     @Override
     public NavigationManager createFromParcel(Parcel in) {
       return new NavigationManager(in);
