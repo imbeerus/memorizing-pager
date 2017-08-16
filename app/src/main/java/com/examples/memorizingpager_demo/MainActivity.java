@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements
     if (savedInstanceState != null) {
       restoreInstanceState(savedInstanceState);
     } else {
-      initNavigationHistory();
+      mNavigationHistory = mViewPager.getNavigationManager();
     }
   }
 
@@ -50,15 +50,8 @@ public class MainActivity extends AppCompatActivity implements
       mViewPager.setNavigationManager(mNavigationHistory);
       mViewPager.setCurrentItem(mNavigationHistory.getLastSelectedItem(), false);
     } else {
-      initNavigationHistory();
+      mNavigationHistory = mViewPager.getNavigationManager();
     }
-  }
-
-  private void initNavigationHistory() {
-    mNavigationHistory = mViewPager.getNavigationManager();
-    //  Or
-    //  mNavigationHistory = new NavigationManager(mViewPager.getAdapter().getCount());
-    //  mViewPager.setNavigationManager(mNavigationHistory);
   }
 
   @Override

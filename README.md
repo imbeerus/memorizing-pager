@@ -2,7 +2,7 @@
 
 [![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)
 [![License](https://img.shields.io/badge/license-Apache%202-red.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
-[![Download](https://img.shields.io/badge/Download-v.1.0.2-blue.svg)](https://github.com/kekc42/memorizing-pager#download)
+[![Download](https://img.shields.io/badge/Download-v.1.0.3-blue.svg)](https://github.com/kekc42/memorizing-pager#download)
 
 <img src="https://raw.githubusercontent.com/kekc42/memorizing-pager/master/graphics/demo.gif" width="30%" />
 
@@ -22,7 +22,7 @@ allprojects {
 ```
 ```
 dependencies {
-	compile 'com.github.kekc42:memorizing-pager:1.0.2'
+	compile 'com.github.kekc42:memorizing-pager:1.0.3'
 }
 ```
 or Maven:
@@ -38,7 +38,7 @@ or Maven:
 <dependency>
 	<groupId>com.github.kekc42</groupId>
 	<artifactId>memorizing-pager</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 </dependency>
 ```
 ## License
@@ -59,4 +59,4 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 [1]: https://github.com/kekc42/memorizing-pager/wiki
-[2]: https://github.com/kekc42/memorizing-pager/releases/download/1.0.2/memorizingpager-sources.jar
+[2]: https://github.com/kekc42/memorizing-pager/releases/download/1.0.3/memorizingpager-sources.jar

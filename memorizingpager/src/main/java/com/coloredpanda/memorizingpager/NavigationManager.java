@@ -118,9 +118,15 @@ public final class NavigationManager implements Parcelable {
       mSelectedPages.pop();
     }
 
-    mPushedCount--;
-    mBackupItemId = mSelectedPages.peek();
-    return mSelectedPages.pop();
+    if (!mSelectedPages.isEmpty()) {
+      mPushedCount--;
+      mBackupItemId = mSelectedPages.peek();
+      return mSelectedPages.pop();
+    } else {
+      mPushedCount = 0;
+      mBackupItemId = 0;
+      return 0;
+    }
   }
 
   /**
