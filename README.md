@@ -41,6 +41,9 @@ or Maven:
 	<version>1.0.3</version>
 </dependency>
 ```
+## Issue Tracking
+Found a bug? Have an idea for an improvement? Feel free to [add an issue](../../issues).
+
 ## License
 
 ```
