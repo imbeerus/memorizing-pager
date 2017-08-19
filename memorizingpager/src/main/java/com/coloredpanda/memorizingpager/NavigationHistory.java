@@ -15,30 +15,33 @@
  */
 package com.coloredpanda.memorizingpager;
 
+import android.content.Context;
+import android.content.res.TypedArray;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.AttributeSet;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
 /**
  * NavigationManager it class that allows you to store called items by {@link
- * android.support.v4.view.ViewPager} and navigate in the opposite direction.
+ * android.support.v4.view.ViewPager} and get these items in the opposite direction.
  *
  * @author Ivan Zinovyev
- * @version 1.0
+ * @version 1.1
  */
 
-public final class NavigationManager implements Parcelable {
+final class NavigationHistory implements Parcelable {
 
-  public static final Creator<NavigationManager> CREATOR = new Creator<NavigationManager>() {
+  static final Creator<NavigationHistory> CREATOR = new Creator<NavigationHistory>() {
     @Override
-    public NavigationManager createFromParcel(Parcel in) {
-      return new NavigationManager(in);
+    public NavigationHistory createFromParcel(Parcel in) {
+      return new NavigationHistory(in);
     }
 
     @Override
-    public NavigationManager[] newArray(int size) {
-      return new NavigationManager[size];
+    public NavigationHistory[] newArray(int size) {
+      return new NavigationHistory[size];
     }
   };
 
@@ -47,76 +50,54 @@ public final class NavigationManager implements Parcelable {
   private int mBackupItemId;
   private boolean mFirstSelect;
 
-  /**
-   * Constructs an empty manager with an initial capacity of zero.
-   */
+  NavigationHistory() {}
 
-  public NavigationManager() {
-    init(0);
-  }
-
-  /**
-   * Constructs a manager with the specified initial capacity.
-   *
-   * @param initialCapacity the initial capacity of the manager
-   */
-
-  public NavigationManager(int initialCapacity) {
-    init(initialCapacity);
-  }
-
-  private NavigationManager(Parcel in) {
-    int size = in.readInt();
-    int[] array = new int[size];
-    in.readIntArray(array);
-    mSelectedPages = intArrayToDeque(array, size);
-
+  private NavigationHistory(Parcel in) {
+    mSelectedPages = (ArrayDeque<Integer>) in.readSerializable();
     mPushedCount = in.readInt();
     mBackupItemId = in.readInt();
     mFirstSelect = in.readByte() != 0;
   }
 
-  private void init(int numElements) {
+  void handleAttributes(Context context, AttributeSet attrs) {
+    int numElements = 0;
+    if (attrs != null) {
+      TypedArray a = context.getTheme().obtainStyledAttributes(
+          attrs,
+          R.styleable.MemorizingPager,
+          0, 0);
+      try {
+        numElements = a.getInteger(R.styleable.MemorizingPager_numPages, 0);
+      } finally {
+        a.recycle();
+      }
+    }
     mSelectedPages = new ArrayDeque<>(numElements);
-    mPushedCount = 0;
-    mBackupItemId = 0;
-    mFirstSelect = false;
   }
 
   final void pushItem(int item) {
-    if (mSelectedPages.contains(item)) {
-      mSelectedPages.remove(item);
-    }
+    if (mSelectedPages.contains(item)) mSelectedPages.remove(item);
 
     if (mBackupItemId != 0) {
       mSelectedPages.push(mBackupItemId);
       mBackupItemId = 0;
     }
 
-    if (!mSelectedPages.contains(item)) {
-      mSelectedPages.push(item);
-    }
+    if (!mSelectedPages.contains(item)) mSelectedPages.push(item);
 
     mPushedCount++;
     mFirstSelect = mPushedCount == 1;
     mPushedCount = mSelectedPages.size();
   }
 
-  /**
-   * Removes and returns the first item of this manager.
-   *
-   * @return the item at the front of this manager
-   */
-  public final int removeLastSelectedItem() {
+  final int popLastSelectedItem() {
     if (mFirstSelect) {
       mSelectedPages.clear();
       mPushedCount = 0;
       return 0;
     }
 
-    if (mSelectedPages.size() == mPushedCount) {
-      mSelectedPages.pop();
-    }
+    if (mSelectedPages.size() == mPushedCount) mSelectedPages.pop();
 
     if (!mSelectedPages.isEmpty()) {
       mPushedCount--;
@@ -129,22 +110,11 @@ public final class NavigationManager implements Parcelable {
     }
   }
 
-  /**
-   * Returns {@code true} if this manager contains no elements.
-   *
-   * @return {@code true} if this manager contains no elements
-   */
-  public final boolean isEmpty() {
+  final boolean isEmpty() {
     return mSelectedPages == null || mSelectedPages.isEmpty();
   }
 
-  /**
-   * Retrieves, but does not remove, the head of the manager, or returns {@code null} if this
-   * manager is empty.
-   *
-   * @return the head item of the manager, or {@code null} if this manager is empty
-   */
-  public final int getLastSelectedItem() {
+  final int peekLastSelectedItem() {
     return mSelectedPages.peek();
   }
 
@@ -169,29 +139,9 @@ public final class NavigationManager implements Parcelable {
    */
   @Override
   public void writeToParcel(Parcel parcel, int f) {
-    int size = mSelectedPages.size();
-    parcel.writeInt(size);
-    int[] array = dequeToIntArray(mSelectedPages, size);
-    parcel.writeIntArray(array);
-
+    parcel.writeSerializable((ArrayDeque<Integer>) mSelectedPages);
     parcel.writeInt(mPushedCount);
     parcel.writeInt(mBackupItemId);
     parcel.writeByte((byte) (mFirstSelect ? 1 : 0));
-  }
-
-  private int[] dequeToIntArray(Deque<Integer> deque, int size) {
-    int[] array = new int[size];
-    for (int i = 0; i < size; i++) {
-      array[i] = deque.pollLast();
-    }
-    return array;
-  }
-
-  private Deque<Integer> intArrayToDeque(int[] array, int size) {
-    Deque<Integer> deque = new ArrayDeque<>(size);
-    for (int i = 0; i < size; i++) {
-      deque.push(array[i]);
-    }
-    return deque;
   }
 }

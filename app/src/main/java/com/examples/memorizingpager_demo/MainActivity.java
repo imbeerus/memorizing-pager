@@ -7,17 +7,12 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import com.coloredpanda.memorizingpager.MemorizingPager;
-import com.coloredpanda.memorizingpager.NavigationManager;
 
 public class MainActivity extends AppCompatActivity implements
     BottomNavigationView.OnNavigationItemSelectedListener, ViewPager.OnPageChangeListener {
 
-  private static final String NAV_HISTORY = "nav_history";
-
   private MemorizingPager mViewPager;
   private BottomNavigationView mBottomNavigationView;
-
-  private NavigationManager mNavigationHistory;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -30,35 +25,13 @@ public class MainActivity extends AppCompatActivity implements
 
     mBottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
     mBottomNavigationView.setOnNavigationItemSelectedListener(this);
-
-    if (savedInstanceState != null) {
-      restoreInstanceState(savedInstanceState);
-    } else {
-      mNavigationHistory = mViewPager.getNavigationManager();
-    }
-  }
-
-  @Override
-  protected void onSaveInstanceState(Bundle outState) {
-    super.onSaveInstanceState(outState);
-    outState.putParcelable(NAV_HISTORY, mNavigationHistory);
-  }
-
-  private void restoreInstanceState(Bundle savedInstanceState) {
-    mNavigationHistory = savedInstanceState.getParcelable(NAV_HISTORY);
-    if (mNavigationHistory != null && !mNavigationHistory.isEmpty()) {
-      mViewPager.setNavigationManager(mNavigationHistory);
-      mViewPager.setCurrentItem(mNavigationHistory.getLastSelectedItem(), false);
-    } else {
-      mNavigationHistory = mViewPager.getNavigationManager();
-    }
   }
 
   @Override
   public void onBackPressed() {
     // If navigation history is not empty then set the last item like a current
-    if (!mNavigationHistory.isEmpty()) {
-      mViewPager.setCurrentItem(mNavigationHistory.removeLastSelectedItem(), false);
+    if (!mViewPager.isNavigationHistoryEmpty()) {
+      mViewPager.setCurrentItem(mViewPager.removeLastSelectedItem(), false);
     }
     // If navigation history is empty and current item is not first then set it
     else if (mViewPager.getCurrentItem() != 0) {
