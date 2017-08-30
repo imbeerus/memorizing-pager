@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/license-Apache%202-red.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Download](https://img.shields.io/badge/Download-v.1.1.1-blue.svg)](https://github.com/kekc42/memorizing-pager#download)
 
-<img src="https://raw.githubusercontent.com/kekc42/memorizing-pager/master/graphics/demo.gif" width="30%" />
+<img src="https://raw.githubusercontent.com/kekc42/memorizing-pager/master/graphics/library-demo.gif" width="30%" />
 
 ### What?
 Custom ViewPager which with BottomNavigationView connection allows navigating in the opposite direction when calling onBackPressed in Activity. For more information see [the wiki][1].
