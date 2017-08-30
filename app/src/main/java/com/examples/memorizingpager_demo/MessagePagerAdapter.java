@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 class MessagePagerAdapter extends FragmentPagerAdapter {
 
-  private static final int NUM_PAGES = 3;
+  private static final int NUM_PAGES = 4;
 
   MessagePagerAdapter(FragmentManager fm) {
     super(fm);

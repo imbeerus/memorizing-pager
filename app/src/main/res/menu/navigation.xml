@@ -8,15 +8,21 @@
     android:title="@string/title_home" />
 
   <item
-    android:id="@+id/navigation_dashboard"
-    android:icon="@drawable/ic_dashboard"
+    android:id="@+id/navigation_trending"
+    android:icon="@drawable/ic_whatshot"
     android:orderInCategory="1"
-    android:title="@string/title_dashboard" />
+    android:title="@string/title_trending" />
 
   <item
-    android:id="@+id/navigation_notifications"
-    android:icon="@drawable/ic_notifications"
+    android:id="@+id/navigation_subscriptions"
+    android:icon="@drawable/ic_subscriptions"
     android:orderInCategory="2"
-    android:title="@string/title_notifications" />
+    android:title="@string/title_subscriptions" />
+
+  <item
+    android:id="@+id/navigation_library"
+    android:icon="@drawable/ic_folder"
+    android:orderInCategory="3"
+    android:title="@string/title_library" />
 
 </menu>

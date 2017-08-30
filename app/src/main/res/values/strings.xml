@@ -1,6 +1,7 @@
 <resources>
-  <string name="app_name">MemorizingPager Demo</string>
+  <string name="app_name">MemorizingPager</string>
   <string name="title_home">Home</string>
-  <string name="title_dashboard">Dashboard</string>
-  <string name="title_notifications">Notifications</string>
+  <string name="title_trending">Trending</string>
+  <string name="title_subscriptions">Subscriptions</string>
+  <string name="title_library">Library</string>
 </resources>

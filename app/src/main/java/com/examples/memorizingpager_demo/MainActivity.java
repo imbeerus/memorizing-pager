@@ -6,6 +6,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import com.coloredpanda.memorizingpager.BottomNavigationViewHelper;
 import com.coloredpanda.memorizingpager.MemorizingPager;
 
 public class MainActivity extends AppCompatActivity implements
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements
 
     mBottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
     mBottomNavigationView.setOnNavigationItemSelectedListener(this);
+    BottomNavigationViewHelper.disableShiftMode(mBottomNavigationView);
   }
 
   @Override
