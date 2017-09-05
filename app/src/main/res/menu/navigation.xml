@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-  <item
-    android:id="@+id/navigation_home"
-    android:icon="@drawable/ic_home"
-    android:orderInCategory="0"
-    android:title="@string/title_home" />
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home"
+        android:orderInCategory="0"
+        android:title="@string/title_home" />
 
-  <item
-    android:id="@+id/navigation_trending"
-    android:icon="@drawable/ic_whatshot"
-    android:orderInCategory="1"
-    android:title="@string/title_trending" />
+    <item
+        android:id="@+id/navigation_trending"
+        android:icon="@drawable/ic_whatshot"
+        android:orderInCategory="1"
+        android:title="@string/title_trending" />
 
-  <item
-    android:id="@+id/navigation_subscriptions"
-    android:icon="@drawable/ic_subscriptions"
-    android:orderInCategory="2"
-    android:title="@string/title_subscriptions" />
+    <item
+        android:id="@+id/navigation_subscriptions"
+        android:icon="@drawable/ic_subscriptions"
+        android:orderInCategory="2"
+        android:title="@string/title_subscriptions" />
 
-  <item
-    android:id="@+id/navigation_library"
-    android:icon="@drawable/ic_folder"
-    android:orderInCategory="3"
-    android:title="@string/title_library" />
+    <item
+        android:id="@+id/navigation_library"
+        android:icon="@drawable/ic_folder"
+        android:orderInCategory="3"
+        android:title="@string/title_library" />
 
 </menu>

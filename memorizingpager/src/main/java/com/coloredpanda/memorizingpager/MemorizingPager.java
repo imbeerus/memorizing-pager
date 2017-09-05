@@ -11,12 +11,10 @@ public class MemorizingPager extends MotionlessPager {
 
   public MemorizingPager(Context context) {
     super(context);
-    mNavigationHistory.handleAttributes(context, null);
   }
 
   public MemorizingPager(Context context, AttributeSet attrs) {
     super(context, attrs);
-    mNavigationHistory.handleAttributes(context, attrs);
   }
 
   /**
