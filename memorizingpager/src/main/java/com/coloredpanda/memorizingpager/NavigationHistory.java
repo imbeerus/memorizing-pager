@@ -22,14 +22,14 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 /**
- * NavigationManager it class that allows you to store called items by {@link
+ * NavigationHistory it class that allows to store called items by {@link
  * android.support.v4.view.ViewPager} and get these items in the opposite direction.
  *
  * @author Ivan Zinovyev
- * @version 1.1
+ * @version 1.2
  */
 
-final class NavigationHistory implements Parcelable {
+public final class NavigationHistory implements Parcelable {
 
     private static final int MAX_BOTTOM_DESTINATIONS = 5;
 
@@ -50,7 +50,7 @@ final class NavigationHistory implements Parcelable {
     private int mBackupItemId;
     private boolean mFirstSelect;
 
-    NavigationHistory() {
+    public NavigationHistory() {
         mSelectedPages = new ArrayDeque<>(MAX_BOTTOM_DESTINATIONS);
     }
 
@@ -61,7 +61,12 @@ final class NavigationHistory implements Parcelable {
         mFirstSelect = in.readByte() != 0;
     }
 
-    final void pushItem(int item) {
+    /**
+     * Pushes an item onto the stack represented by this deque. In other words, inserts the item at the front of this deque.
+     *
+     * @param item the item to push
+     */
+    public void pushItem(int item) {
         if (mSelectedPages.contains(item)) mSelectedPages.remove(item);
 
         if (mBackupItemId != 0) {
@@ -76,7 +81,12 @@ final class NavigationHistory implements Parcelable {
         mPushedCount = mSelectedPages.size();
     }
 
-    final int popLastSelectedItem() {
+    /**
+     * Removes and returns the first item of navigation history.
+     *
+     * @return the item at the front of navigation history
+     */
+    public int popLastSelectedItem() {
         if (mFirstSelect) {
             mSelectedPages.clear();
             mPushedCount = 0;
@@ -96,11 +106,22 @@ final class NavigationHistory implements Parcelable {
         }
     }
 
-    final boolean isEmpty() {
+    /**
+     * Returns {@code true} if navigation history contains no items.
+     *
+     * @return {@code true} if navigation history contains no items
+     */
+    public boolean isEmpty() {
         return mSelectedPages == null || mSelectedPages.isEmpty();
     }
 
-    final int peekLastSelectedItem() {
+    /**
+     * Retrieves, but does not remove, the head of the navigation history, or returns {@code null}
+     * if this history is empty.
+     *
+     * @return the head item of the manager, or {@code null} if this manager is empty
+     */
+    public int peekLastSelectedItem() {
         return mSelectedPages.peek();
     }
 
