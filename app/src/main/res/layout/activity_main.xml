@@ -9,7 +9,7 @@
 
     <!-- com.coloredpanda.memorizingpager.MemorizingPager or android.support.v4.view.ViewPager-->
     <com.coloredpanda.memorizingpager.MemorizingPager
-        android:id="@+id/vp_content"
+        android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
