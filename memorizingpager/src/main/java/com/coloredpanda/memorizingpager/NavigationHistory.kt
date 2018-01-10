@@ -17,7 +17,6 @@ package com.coloredpanda.memorizingpager
 
 import android.os.Parcel
 import android.os.Parcelable
-
 import java.util.ArrayDeque
 import java.util.Deque
 
@@ -88,14 +87,14 @@ class NavigationHistory : Parcelable {
 
         if (mSelectedPages!!.size == mPushedCount) mSelectedPages!!.pop()
 
-        if (!mSelectedPages!!.isEmpty()) {
+        return if (!mSelectedPages!!.isEmpty()) {
             mPushedCount--
             mBackupItemId = mSelectedPages!!.peek()
-            return mSelectedPages!!.pop()
+            mSelectedPages!!.pop()
         } else {
             mPushedCount = 0
             mBackupItemId = 0
-            return 0
+            0
         }
     }
 
@@ -106,7 +105,11 @@ class NavigationHistory : Parcelable {
      * @return the head item of the manager, or `null` if this manager is empty
      */
     fun peekLastSelectedItem(): Int {
-        return mSelectedPages!!.peek()
+        return if (!mSelectedPages!!.isEmpty()) {
+            mSelectedPages!!.peek()
+        } else {
+            0
+        }
     }
 
     /**
