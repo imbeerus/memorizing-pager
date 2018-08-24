@@ -9,15 +9,14 @@ import android.widget.TextView
 
 class MessageFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        val rootView = inflater!!.inflate(R.layout.fragment_message, container, false)
-        val textView = rootView.findViewById<TextView>(R.id.tv_message)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+            val rootView = inflater.inflate(R.layout.fragment_message, container, false)
+            val textView = rootView.findViewById<TextView>(R.id.tv_message)
 
-        val position = arguments.getInt("position", 0)
-        textView.text = (position + 1).toString()
-        return rootView
-    }
+            val position = arguments?.getInt("position", 0)
+            textView.text = (position?.plus(1)).toString()
+            return rootView
+        }
 
     companion object {
 
