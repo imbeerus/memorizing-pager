@@ -2,9 +2,9 @@
 
 [![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)
 [![License](https://img.shields.io/badge/license-Apache%202-red.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
-[![Download](https://img.shields.io/badge/Download-v.1.2.1-blue.svg)](https://github.com/kekc42/memorizing-pager#download)
+[![Download](https://img.shields.io/badge/Download-v.1.2.2-blue.svg)]()
 
-<img src="https://raw.githubusercontent.com/kekc42/memorizing-pager/master/graphics/library-demo.gif" width="30%" />
+<img src="https://github.com/msnthrpc-drnkn-lnr/memorizing-pager/blob/master/graphics/library-demo.gif?raw=true" width="30%" />
 
 ### What?
 Custom ViewPager which with BottomNavigationView connection allows navigating in the opposite direction when calling onBackPressed in Activity. For more information see [the wiki][1].
@@ -22,24 +22,8 @@ allprojects {
 ```
 ```
 dependencies {
-	compile 'com.github.kekc42:memorizing-pager:1.2.1'
+	implementation 'com.github.msnthrpc-drnkn-lnr:memorizing-pager:1.2.2'
 }
-```
-or Maven:
-```
-<repositories>
-	<repository>
-		<id>jitpack.io</id>
-		<url>https://www.jitpack.io</url>
-	</repository>
-</repositories>
-```
-```
-<dependency>
-	<groupId>com.github.kekc42</groupId>
-	<artifactId>memorizing-pager</artifactId>
-	<version>1.2.1</version>
-</dependency>
 ```
 ## Issue Tracking
 Found a bug? Have an idea for an improvement? Feel free to [add an issue](../../issues).
@@ -61,5 +45,5 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
-[1]: https://github.com/kekc42/memorizing-pager/wiki
-[2]: https://github.com/kekc42/memorizing-pager/releases/download/1.2.1/memorizingpager-sources.jar
+[1]: https://github.com/msnthrpc-drnkn-lnr/memorizing-pager/wiki
+[2]: https://github.com/msnthrpc-drnkn-lnr/memorizing-pager/releases
