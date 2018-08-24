@@ -2,7 +2,7 @@
 
 [![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)
 [![License](https://img.shields.io/badge/license-Apache%202-red.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
-[![Download](https://img.shields.io/badge/Download-v.1.2.2-blue.svg)]()
+[![Download](https://img.shields.io/badge/Download-v.1.2.2-blue.svg)](https://github.com/msnthrpc-drnkn-lnr/memorizing-pager/releases/latest)
 
 <img src="https://github.com/msnthrpc-drnkn-lnr/memorizing-pager/blob/master/graphics/library-demo.gif?raw=true" width="30%" />
 
