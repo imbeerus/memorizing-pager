@@ -7,7 +7,7 @@
 <img src="https://github.com/msnthrpc-drnkn-lnr/memorizing-pager/blob/master/graphics/library-demo.gif?raw=true" width="30%" />
 
 ### What?
-Custom ViewPager which with BottomNavigationView connection allows navigating in the opposite direction when calling onBackPressed in Activity. For more information see [the wiki][1].
+Lightweight library for BottomNavigationView which allows navigating in the opposite direction when calling onBackPressed in Activity
 
 ### Download
 Download the [latest JAR][2] or grab via Gradle:
