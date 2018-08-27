@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/license-Apache%202-red.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Download](https://img.shields.io/badge/Download-v.2.0.0-blue.svg)](https://github.com/msnthrpc-drnkn-lnr/memorizing-pager/releases/latest)
 
-<img src="https://github.com/msnthrpc-drnkn-lnr/memorizing-pager/blob/master/graphics/library-demo.gif?raw=true" width="30%" />
+<img src="https://github.com/msnthrpc-drnkn-lnr/memorizing-pager/blob/master/screenshots/ezgif.com-crop.gif?raw=true" width="45%" />
 
 ### What?
 Lightweight library for BottomNavigationView which allows navigating in the opposite direction when calling onBackPressed in Activity
