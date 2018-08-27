@@ -1,16 +1,12 @@
 package com.lockwood.memorizingpager_demo
 
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentPagerAdapter
-import android.support.v4.view.ViewPager
-import android.support.v7.app.AppCompatActivity
+import android.os.Parcelable
 import android.view.MenuItem
 import com.lockwood.memorizingpager.NavigationHistory
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), ViewPager.OnPageChangeListener, BottomNavigationView.OnNavigationItemSelectedListener {
+class MainActivity : BaseActivity() {
 
     private lateinit var navigationHistory: NavigationHistory
 
@@ -20,15 +16,19 @@ class MainActivity : AppCompatActivity(), ViewPager.OnPageChangeListener, Bottom
         navigationHistory = if (savedInstanceState == null) {
             NavigationHistory()
         } else {
-//            savedInstanceState.getParcelable<Parcelable>(NAV_HISTORY_EXTRA) as NavigationHistory
-            NavigationHistory()
+            savedInstanceState.getParcelable<Parcelable>(EXTRA_NAV_HISTORY) as NavigationHistory
         }
         initViewPager()
         initBottomNavigation()
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putParcelable(EXTRA_NAV_HISTORY, navigationHistory)
+    }
+
     override fun onNavigationItemSelected(item: MenuItem): Boolean = with(item) {
-        return if (isItemSelected(itemId)) {
+        return if (!isItemSelected(itemId)) {
             pager.setCurrentItem(order, false)
             navigationHistory.pushItem(order)
             true
@@ -52,29 +52,10 @@ class MainActivity : AppCompatActivity(), ViewPager.OnPageChangeListener, Bottom
         navigation.menu.getItem(itemOrder).isChecked = true
     }
 
-    override fun onPageScrollStateChanged(p0: Int) {
+    override fun onPageScrollStateChanged(p0: Int) {}
+    override fun onPageScrolled(p0: Int, p1: Float, p2: Int) {}
 
+    companion object {
+        private const val EXTRA_NAV_HISTORY = "nav_history"
     }
-
-    override fun onPageScrolled(p0: Int, p1: Float, p2: Int) {
-    }
-
-    private fun initViewPager() {
-        pager.adapter = (object : FragmentPagerAdapter(supportFragmentManager) {
-            override fun getCount(): Int {
-                return navigation.menu.size()
-            }
-
-            override fun getItem(p0: Int): Fragment {
-                return MessageFragment.newInstance(p0)
-            }
-        })
-        pager.addOnPageChangeListener(this)
-    }
-
-    private fun initBottomNavigation() {
-        navigation.setOnNavigationItemSelectedListener(this)
-    }
-
-    private fun isItemSelected(itemId: Int): Boolean = navigation.selectedItemId != itemId
 }

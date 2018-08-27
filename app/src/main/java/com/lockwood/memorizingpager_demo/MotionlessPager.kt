@@ -1,4 +1,4 @@
-package com.lockwood.memorizingpager
+package com.lockwood.memorizingpager_demo
 
 import android.content.Context
 import android.support.v4.view.ViewPager

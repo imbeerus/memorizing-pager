@@ -4,8 +4,6 @@ apply plugin: 'kotlin-android'
 android {
     compileSdkVersion 28
 
-
-
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 28
@@ -14,18 +12,17 @@ android {
     }
 
     buildTypes {
+        debug{
+            minifyEnabled true
+        }
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled true
         }
     }
 
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    implementation "com.android.support:appcompat-v7:$support_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {
