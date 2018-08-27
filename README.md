@@ -2,7 +2,7 @@
 
 [![API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=14)
 [![License](https://img.shields.io/badge/license-Apache%202-red.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
-[![Download](https://img.shields.io/badge/Download-v.1.2.2-blue.svg)](https://github.com/msnthrpc-drnkn-lnr/memorizing-pager/releases/latest)
+[![Download](https://img.shields.io/badge/Download-v.2.0.0-blue.svg)](https://github.com/msnthrpc-drnkn-lnr/memorizing-pager/releases/latest)
 
 <img src="https://github.com/msnthrpc-drnkn-lnr/memorizing-pager/blob/master/graphics/library-demo.gif?raw=true" width="30%" />
 
@@ -22,7 +22,7 @@ allprojects {
 ```
 ```
 dependencies {
-	implementation 'com.github.msnthrpc-drnkn-lnr:memorizing-pager:1.2.2'
+	implementation 'com.github.msnthrpc-drnkn-lnr:memorizing-pager:2.0.0'
 }
 ```
 ## Issue Tracking
@@ -31,7 +31,7 @@ Found a bug? Have an idea for an improvement? Feel free to [add an issue](../../
 ## License
 
 ```
-Copyright (C) 2017 Ivan Zinovyev (https://github.com/kekc42)
+Copyright (C) 2018 Ivan Zinovyev (https://github.com/msnthrpc-drnkn-lnr)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
