@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.examples.memorizingpager_demo.MainActivity">
+    tools:context=".MainActivity">
 
-    <!-- com.coloredpanda.memorizingpager.MemorizingPager or android.support.v4.view.ViewPager-->
-    <com.coloredpanda.memorizingpager.MemorizingPager
+    <!-- com.lockwood.memorizingpager.MotionlessPager .MemorizingPager or android.support.v4.view.ViewPager-->
+    <com.lockwood.memorizingpager.MotionlessPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -20,6 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="?android:attr/windowBackground"
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/navigation" />
 
 </LinearLayout>

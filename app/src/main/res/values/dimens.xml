@@ -1,3 +1,4 @@
-<resources>
-  <dimen name="text_size">128sp</dimen>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="design_bottom_navigation_text_size" tools:override="true">9sp</dimen>
+    <dimen name="design_bottom_navigation_active_text_size" tools:override="true">9sp</dimen>
 </resources>
