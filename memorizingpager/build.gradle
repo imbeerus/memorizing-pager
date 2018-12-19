@@ -1,6 +1,8 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'kotlin-android'
+apply plugin: 'com.github.dcendents.android-maven'
+group = 'com.github.msnthrpc-drnkn-lnr'
+version = "2.1.1"
 
 android {
     compileSdkVersion 28
@@ -8,8 +10,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 28
-        versionCode 3
-        versionName "2.1"
+        versionCode 4
+        versionName "2.1.1"
     }
 
     buildTypes {
@@ -20,7 +22,6 @@ android {
             minifyEnabled true
         }
     }
-
 }
 
 dependencies {
