@@ -1,4 +1,4 @@
-package com.lockwood.memorizingpager_demo
+package com.lockwood.pagerdemo
 
 import android.os.Bundle
 import android.os.Parcelable

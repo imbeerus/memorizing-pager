@@ -1,27 +1,27 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.github.dcendents.android-maven'
-group = 'com.github.msnthrpc-drnkn-lnr'
-version = "2.1.1"
+
+group='com.github.lndmflngs'
 
 android {
     compileSdkVersion 28
 
+
     defaultConfig {
-        minSdkVersion 14
+        minSdkVersion 15
         targetSdkVersion 28
-        versionCode 4
-        versionName "2.1.1"
+        versionCode 6
+        versionName "2.0.1"
     }
 
     buildTypes {
-        debug{
-            minifyEnabled true
-        }
         release {
-            minifyEnabled true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {

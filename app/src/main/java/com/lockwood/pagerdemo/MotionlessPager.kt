@@ -1,5 +1,6 @@
-package com.lockwood.memorizingpager_demo
+package com.lockwood.pagerdemo
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.support.v4.view.ViewPager
 import android.util.AttributeSet
@@ -28,6 +29,7 @@ class MotionlessPager(context: Context, attrs: AttributeSet?) : ViewPager(contex
         return false
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onTouchEvent(event: MotionEvent): Boolean {
         return false
     }

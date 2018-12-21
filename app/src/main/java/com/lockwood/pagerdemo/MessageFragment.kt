@@ -1,4 +1,4 @@
-package com.lockwood.memorizingpager_demo
+package com.lockwood.pagerdemo
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -12,14 +12,15 @@ class MessageFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.frag_message, container, false)
         val textView = rootView.findViewById<TextView>(R.id.tv_message)
-        val position = arguments?.getInt(ARG_POSITION, 0)
+        val position = arguments?.getInt(ARG_POSITION, DEF_POSITION)
         textView.text = (position?.plus(1)).toString()
         return rootView
     }
 
     companion object {
 
-       private  const val ARG_POSITION = "position"
+        private const val ARG_POSITION = "position"
+        private const val DEF_POSITION = 0
 
         fun newInstance(position: Int): MessageFragment {
             val fragment = MessageFragment()

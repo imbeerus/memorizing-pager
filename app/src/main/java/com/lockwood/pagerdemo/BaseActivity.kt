@@ -1,4 +1,4 @@
-package com.lockwood.memorizingpager_demo
+package com.lockwood.pagerdemo
 
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
