@@ -6,10 +6,10 @@
 
 <img src="https://github.com/lndmflngs/memorizing-pager/blob/master/screenshots/ezgif.com-crop.gif?raw=true" width="45%" />
 
-### What?
+## What?
 Lightweight library for BottomNavigationView which allows navigating in the opposite direction when calling onBackPressed in Activity
 
-### Download
+## Download
 Download the [latest JAR][1] or grab via Gradle:
 
 ```
