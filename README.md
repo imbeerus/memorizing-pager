@@ -9,6 +9,9 @@
 ## What?
 Lightweight library for BottomNavigationView which allows navigating in the opposite direction when calling onBackPressed in Activity
 
+## Setup
+You should add id's for you navigation menu items and android:orderInCategory. Look at the demo app [navigation.xml](https://github.com/lndmflngs/memorizing-pager/blob/master/app/src/main/res/menu/navigation.xml)
+
 ## Download
 Download the [latest JAR][1] or grab via Gradle:
 
