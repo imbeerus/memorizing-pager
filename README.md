@@ -2,7 +2,7 @@
 
 [![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=15)
 [![License](https://img.shields.io/badge/license-Apache%202-red.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
-[![Download](https://img.shields.io/badge/Download-v.2.0.1-blue.svg)][1]
+[![Download](https://img.shields.io/badge/Download-v.2.0.2-blue.svg)][1]
 
 <img src="https://github.com/lndmflngs/memorizing-pager/blob/master/screenshots/ezgif.com-crop.gif?raw=true" width="45%" />
 
@@ -25,7 +25,7 @@ allprojects {
 ```
 ```
 dependencies {
-    	implementation 'com.github.lndmflngs:memorizing-pager:2.0.1'
+    	implementation 'com.github.lndmflngs:memorizing-pager:2.0.2'
 }
 ```
 ## Support
