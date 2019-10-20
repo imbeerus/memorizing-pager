@@ -6,19 +6,21 @@ group='com.github.lndmflngs'
 
 android {
     compileSdkVersion 29
+    buildToolsVersion "29.0.2"
 
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 29
         versionCode 7
         versionName "2.0.2"
+
+        consumerProguardFiles 'consumer-rules.pro'
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            consumerProguardFiles 'proguard-rules.pro'
         }
     }
 
@@ -27,6 +29,7 @@ android {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
+
 repositories {
     mavenCentral()
 }

@@ -1,0 +1,2 @@
+-dontwarn com.lockwood.memorizingpager.**
+-keep class com.lockwood.memorizingpager.** { *; }
