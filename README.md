@@ -1,8 +1,8 @@
 # memorizing-pager
 
-[![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=15)
+[![API](https://img.shields.io/badge/API-15%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=15)
 [![License](https://img.shields.io/badge/license-Apache%202-red.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
-[![Download](https://img.shields.io/badge/Download-v.2.0.3-blue.svg)][1]
+[![](https://jitpack.io/v/lndmflngs/memorizing-pager.svg)](https://jitpack.io/#lndmflngs/memorizing-pager)
 
 <img src="https://github.com/lndmflngs/memorizing-pager/blob/master/screenshots/ezgif.com-crop.gif?raw=true" width="45%" />
 
@@ -13,7 +13,7 @@ Lightweight library for BottomNavigationView which allows navigating in the oppo
 You should add id's for you navigation menu items and android:orderInCategory. Look at the demo app [navigation.xml](https://github.com/lndmflngs/memorizing-pager/blob/master/app/src/main/res/menu/navigation.xml)
 
 ## Download
-Download the [latest JAR][1] or grab via Gradle:
+Download the [latest release][1] or grab via Gradle:
 
 ```
 allprojects {
@@ -28,16 +28,13 @@ dependencies {
     	implementation 'com.github.lndmflngs:memorizing-pager:2.0.3'
 }
 ```
-## Support
-If you want to support the the project or show your appreciation feel free to **[buy me a coffee / donate](https://www.paypal.me/kekc1304/1)**
-
 ## Issue Tracking
 Found a bug? Have an idea for an improvement? Feel free to [add an issue](../../issues).
 
 ## License
 
 ```
-Copyright (C) 2019 Ivan Zinovyev (https://github.com/lndmflngs)
+Copyright (C) 2018-2019 Ivan Zinovyev (https://github.com/lndmflngs)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
