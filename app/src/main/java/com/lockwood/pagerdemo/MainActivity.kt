@@ -40,7 +40,7 @@ class MainActivity : BaseActivity() {
     override fun onBackPressed() {
         if (!navigationHistory.isEmpty()) {
             // Use false to transition immediately
-            pager.setCurrentItem(navigationHistory.onBackPressed(), false)
+            pager.setCurrentItem(navigationHistory.popLastSelected(), false)
         } else if (pager.currentItem != 0) {
             pager.setCurrentItem(0, false)
         } else {

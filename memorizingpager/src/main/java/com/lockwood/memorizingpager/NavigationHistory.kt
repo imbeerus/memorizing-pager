@@ -17,13 +17,18 @@ package com.lockwood.memorizingpager
 
 import android.os.Parcel
 import android.os.Parcelable
-import java.util.Deque
-import java.util.ArrayDeque
+import java.util.*
 
 class NavigationHistory() : Parcelable {
 
     private var selectedPages: Deque<Int> = ArrayDeque<Int>(MAX_BOTTOM_DESTINATIONS)
     private var isBackPressed = false
+
+    val size: Int
+        get() = selectedPages.size
+
+    val lastSelectedItem: Int?
+        get() = selectedPages.peek()
 
     constructor(parcel: Parcel) : this() {
         isBackPressed = parcel.readByte() != 0.toByte()
@@ -37,16 +42,20 @@ class NavigationHistory() : Parcelable {
         isBackPressed = false
     }
 
-    fun onBackPressed(): Int {
-        return if (selectedPages.size == 1 && !isBackPressed) {
-            selectedPages.clear()
+    fun popLastSelected(): Int {
+        return try {
+            if (selectedPages.size == 1 && !isBackPressed) {
+                selectedPages.clear()
+                0
+            } else if (selectedPages.size >= 2 && !isBackPressed) {
+                isBackPressed = true
+                selectedPages.pop()
+                selectedPages.pop()
+            } else {
+                selectedPages.pop()
+            }
+        } catch (e: NoSuchElementException) {
             0
-        } else if (selectedPages.size >= 2 && !isBackPressed) {
-            isBackPressed = true
-            selectedPages.pop()
-            selectedPages.pop()
-        } else {
-            selectedPages.pop()
         }
     }
 
