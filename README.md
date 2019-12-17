@@ -25,7 +25,7 @@ allprojects {
 ```
 ```
 dependencies {
-    	implementation 'com.github.lndmflngs:memorizing-pager:2.0.3'
+    	implementation 'com.github.lndmflngs:memorizing-pager:2.0.4'
 }
 ```
 ## Issue Tracking
