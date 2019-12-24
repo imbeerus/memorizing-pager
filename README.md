@@ -12,7 +12,7 @@ Lightweight library for BottomNavigationView which allows navigating in the oppo
 ## Setup
 1. You should add id's for you navigation menu items and android:orderInCategory ([navigation.xml][2])
 2. Add [NavigationHistory][3] to you activity ([BaseNavigationActivity][4])
-3. Setup NavigationHistory with you navigation type ([ViewPager][5]|[ViewPager2][6]|[FrameLayout][7])
+3. Setup NavigationHistory with you navigation type ([ViewPager][5],[ViewPager2][6],[FrameLayout][7])
 
 ## Download
 Download the [latest release][1] or grab via Gradle:
