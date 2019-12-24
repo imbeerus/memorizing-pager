@@ -10,12 +10,12 @@
 Lightweight library for BottomNavigationView which allows navigating in the opposite direction when calling onBackPressed in Activity
 
 ## Setup
-1. You should add id's for you navigation menu items and android:orderInCategory ( [navigation.xml][2] )
-2. Add [NavigationHistory][6] to you activity ( [BaseNavigationActivity][7] )
-3. Setup NavigationHistory with you navigation type ( [ViewPager][] | [ViewPager2][] | [FrameLayout][] )
+1. You should add id's for you navigation menu items and android:orderInCategory ([navigation.xml][2])
+2. Add [NavigationHistory][3] to you activity ([BaseNavigationActivity][4])
+3. Setup NavigationHistory with you navigation type [ViewPager][5] | [ViewPager2][6] | [FrameLayout][7] 
 
 ## Download
-Download the [latest release][1] or grab via Gradle:
+Download the [latest release][1] AAR or grab via Gradle:
 
 ```
 allprojects {
@@ -31,7 +31,7 @@ dependencies {
 }
 ```
 ## Issue Tracking
-Found a bug? Have an idea for an improvement? Feel free to [add an issue](../../issues).
+Found a bug? Have an idea for an improvement? Feel free to [add an issue](../../issues)
 
 ## License
 
@@ -52,8 +52,8 @@ limitations under the License.
 ```
 [1]: https://github.com/lndmflngs/memorizing-pager/releases/latest
 [2]: https://github.com/lndmflngs/memorizing-pager/blob/master/app/src/main/res/menu/navigation.xml
-[3]: https://github.com/lndmflngs/memorizing-pager/releases/latest
-[4]: https://github.com/lndmflngs/memorizing-pager/releases/latest
-[5]: https://github.com/lndmflngs/memorizing-pager/releases/latest
-[6]: https://github.com/lndmflngs/memorizing-pager/blob/master/memorizingpager/src/main/java/com/lockwood/memorizingpager/NavigationHistory.kt
-[7]: https://github.com/lndmflngs/memorizing-pager/blob/master/app/src/main/java/com/lockwood/pagerdemo/BaseNavigationActivity.kt
+[3]: https://github.com/lndmflngs/memorizing-pager/blob/master/memorizingpager/src/main/java/com/lockwood/memorizingpager/NavigationHistory.kt
+[4]: https://github.com/lndmflngs/memorizing-pager/blob/master/app/src/main/java/com/lockwood/pagerdemo/BaseNavigationActivity.kt
+[5]: https://github.com/lndmflngs/memorizing-pager/blob/master/app/src/main/java/com/lockwood/pagerdemo/PagerActivity.kt
+[6]: https://github.com/lndmflngs/memorizing-pager/blob/master/app/src/main/java/com/lockwood/pagerdemo/PagerSecondActivity.kt
+[7]: https://github.com/lndmflngs/memorizing-pager/blob/master/app/src/main/java/com/lockwood/pagerdemo/FrameActivity.kt
