@@ -34,6 +34,6 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
     implementation project(path: ':memorizingpager')
-//    implementation 'com.github.lndmflngs:memorizing-pager:2.0.2'
 }

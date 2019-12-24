@@ -17,6 +17,7 @@ package com.lockwood.memorizingpager
 
 import android.os.Parcel
 import android.os.Parcelable
+import android.util.Log
 import java.util.*
 
 class NavigationHistory() : Parcelable {
@@ -46,7 +47,7 @@ class NavigationHistory() : Parcelable {
         return try {
             if (selectedPages.size == 1 && !isBackPressed) {
                 selectedPages.clear()
-                0
+                DEF_ITEM
             } else if (selectedPages.size >= 2 && !isBackPressed) {
                 isBackPressed = true
                 selectedPages.pop()
@@ -55,11 +56,16 @@ class NavigationHistory() : Parcelable {
                 selectedPages.pop()
             }
         } catch (e: NoSuchElementException) {
-            0
+            Log.e(TAG, "${e.message} cause ${e.cause}")
+            DEF_ITEM
         }
     }
 
     fun isEmpty() = selectedPages.isEmpty()
+
+    override fun toString(): String {
+        return selectedPages.toString()
+    }
 
     override fun writeToParcel(parcel: Parcel, p1: Int) {
         parcel.writeByte((if (isBackPressed) 1 else 0).toByte())
@@ -69,6 +75,10 @@ class NavigationHistory() : Parcelable {
     override fun describeContents(): Int = 0
 
     companion object CREATOR : Parcelable.Creator<NavigationHistory> {
+
+        private const val DEF_ITEM = 0
+
+        private const val TAG = "NavigationHistory"
 
         private const val MAX_BOTTOM_DESTINATIONS = 5
 

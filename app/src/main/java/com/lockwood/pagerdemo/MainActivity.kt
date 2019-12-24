@@ -1,61 +1,34 @@
 package com.lockwood.pagerdemo
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
-import android.os.Parcelable
-import android.view.MenuItem
-import com.lockwood.memorizingpager.NavigationHistory
-import kotlinx.android.synthetic.main.activity_main.*
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : BaseActivity() {
+class MainActivity : AppCompatActivity(R.layout.activity_main), View.OnClickListener {
 
-    private lateinit var navigationHistory: NavigationHistory
+    private val buttons = arrayOf(R.id.pager, R.id.pager2, R.id.frame)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        navigationHistory = if (savedInstanceState == null) {
-            NavigationHistory()
-        } else {
-            savedInstanceState.getParcelable<Parcelable>(EXTRA_NAV_HISTORY) as NavigationHistory
-        }
-        initViewPager()
-        initBottomNavigation()
+        buttons.forEach { findViewById<View>(it).setOnClickListener(this) }
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putParcelable(EXTRA_NAV_HISTORY, navigationHistory)
-    }
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean = with(item) {
-        return if (!isItemSelected(itemId)) {
-            pager.setCurrentItem(order, false)
-            navigationHistory.pushItem(order)
-            true
-        } else {
-            false
+    override fun onClick(v: View) {
+        when (v.id) {
+            R.id.pager -> launchActivity<PagerActivity>()
+            R.id.pager2 -> launchActivity<PagerSecondActivity>()
+            R.id.frame -> launchActivity<FrameActivity>()
+            else -> {
+            }
         }
     }
 
-    override fun onBackPressed() {
-        if (!navigationHistory.isEmpty()) {
-            // Use false to transition immediately
-            pager.setCurrentItem(navigationHistory.popLastSelected(), false)
-        } else if (pager.currentItem != 0) {
-            pager.setCurrentItem(0, false)
-        } else {
-            super.onBackPressed()
-        }
+    private inline fun <reified T : Any> Context.launchActivity() {
+        val intent = Intent(this, T::class.java)
+        startActivity(intent)
     }
 
-    override fun onPageSelected(itemOrder: Int) {
-        navigation.menu.getItem(itemOrder).isChecked = true
-    }
 
-    override fun onPageScrollStateChanged(p0: Int) {}
-    override fun onPageScrolled(p0: Int, p1: Float, p2: Int) {}
-
-    companion object {
-        private const val EXTRA_NAV_HISTORY = "nav_history"
-    }
 }

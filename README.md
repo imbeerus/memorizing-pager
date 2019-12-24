@@ -10,7 +10,9 @@
 Lightweight library for BottomNavigationView which allows navigating in the opposite direction when calling onBackPressed in Activity
 
 ## Setup
-You should add id's for you navigation menu items and android:orderInCategory. Look at the demo app [navigation.xml](https://github.com/lndmflngs/memorizing-pager/blob/master/app/src/main/res/menu/navigation.xml)
+1. You should add id's for you navigation menu items and android:orderInCategory ( [navigation.xml][2] )
+2. Add [NavigationHistory][6] to you activity ( [BaseNavigationActivity][7] )
+3. Setup NavigationHistory with you navigation type ( [ViewPager][] | [ViewPager2][] | [FrameLayout][] )
 
 ## Download
 Download the [latest release][1] or grab via Gradle:
@@ -25,7 +27,7 @@ allprojects {
 ```
 ```
 dependencies {
-    	implementation 'com.github.lndmflngs:memorizing-pager:2.0.4'
+    	implementation 'com.github.lndmflngs:memorizing-pager:2.0.5'
 }
 ```
 ## Issue Tracking
@@ -49,3 +51,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 [1]: https://github.com/lndmflngs/memorizing-pager/releases/latest
+[2]: https://github.com/lndmflngs/memorizing-pager/blob/master/app/src/main/res/menu/navigation.xml
+[3]: https://github.com/lndmflngs/memorizing-pager/releases/latest
+[4]: https://github.com/lndmflngs/memorizing-pager/releases/latest
+[5]: https://github.com/lndmflngs/memorizing-pager/releases/latest
+[6]: https://github.com/lndmflngs/memorizing-pager/blob/master/memorizingpager/src/main/java/com/lockwood/memorizingpager/NavigationHistory.kt
+[7]: https://github.com/lndmflngs/memorizing-pager/blob/master/app/src/main/java/com/lockwood/pagerdemo/BaseNavigationActivity.kt

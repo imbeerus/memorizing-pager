@@ -1,14 +1,14 @@
-package com.lockwood.pagerdemo
+package com.lockwood.pagerdemo.custom
 
 import android.annotation.SuppressLint
 import android.content.Context
-import androidx.viewpager.widget.ViewPager
 import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.Scroller
+import androidx.viewpager.widget.ViewPager
 
-class MotionlessPager(context: Context, attrs: AttributeSet?) : ViewPager(context, attrs) {
+class NoSwipeViewPager(context: Context, attrs: AttributeSet?) : ViewPager(context, attrs) {
 
     init {
         try {
@@ -21,7 +21,7 @@ class MotionlessPager(context: Context, attrs: AttributeSet?) : ViewPager(contex
                 }
             })
         } catch (e: Exception) {
-            Log.e(TAG, e.message)
+            Log.e(TAG, e.message.toString())
         }
     }
 
@@ -35,6 +35,7 @@ class MotionlessPager(context: Context, attrs: AttributeSet?) : ViewPager(contex
     }
 
     companion object {
-        private val TAG = "MotionlessPager"
+
+        private val TAG = "NoSwipeViewPager"
     }
 }
